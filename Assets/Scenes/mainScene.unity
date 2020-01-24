@@ -395,7 +395,7 @@ MonoBehaviour:
   tail: []
   frameRate: 0.2
   step: 0.16
-  TailPrefab: {fileID: 0}
+  tailPrefab: {fileID: 0}
   horizontalRange: {x: 0, y: 0}
   verticalRange: {x: 0, y: 0}
 --- !u!4 &312342141
@@ -708,7 +708,7 @@ MonoBehaviour:
   tail: []
   frameRate: 0.2
   step: 0.16
-  TailPrefab: {fileID: 0}
+  tailPrefab: {fileID: 0}
   horizontalRange: {x: 0, y: 0}
   verticalRange: {x: 0, y: 0}
 --- !u!4 &1380592808
@@ -1008,7 +1008,7 @@ MonoBehaviour:
   - {fileID: 312342141}
   frameRate: 0.2
   step: 0.16
-  TailPrefab: {fileID: 6622005647872198321, guid: 9dc0e034d626940cca0aa282312bc2c0,
+  tailPrefab: {fileID: 6622005647872198321, guid: 9dc0e034d626940cca0aa282312bc2c0,
     type: 3}
   horizontalRange: {x: -3.5, y: 3.5}
   verticalRange: {x: -1.8, y: 1.8}
@@ -1371,7 +1371,7 @@ MonoBehaviour:
   tail: []
   frameRate: 0.2
   step: 0.16
-  TailPrefab: {fileID: 0}
+  tailPrefab: {fileID: 0}
   horizontalRange: {x: 0, y: 0}
   verticalRange: {x: 0, y: 0}
 --- !u!4 &2100465919

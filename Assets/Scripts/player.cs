@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class player : MonoBehaviour
+public class Player : MonoBehaviour
 {
 	enum Direction
 	{
@@ -19,7 +19,7 @@ public class player : MonoBehaviour
 	public float frameRate = 0.2f;
 	public float step = 0.16f;
 
-	public GameObject TailPrefab;
+	public GameObject tailPrefab;
 
 	public Vector2 horizontalRange;
 	public Vector2 verticalRange;
@@ -36,13 +36,21 @@ public class player : MonoBehaviour
 		lastPos = transform.position;
 		Vector3 nextPos = Vector3.zero;
 		if (direction == Direction.up)
+		{
 			nextPos = Vector3.up;
+		}
 		else if (direction == Direction.down)
+		{
 			nextPos = Vector3.down;
+		}
 		else if (direction == Direction.left)
+		{
 			nextPos = Vector3.left;
+		}
 		else if (direction == Direction.right)
+		{
 			nextPos = Vector3.right;
+		}
 		nextPos *= step;
 		transform.position += nextPos;
 		MoveTail();
@@ -62,13 +70,21 @@ public class player : MonoBehaviour
     void Update()
     {
 		if ((Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W)) && direction != Direction.down)
+		{
 			direction = Direction.up;
+		}
 		else if ((Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S)) && direction != Direction.up)
+		{
 			direction = Direction.down;
+		}
 		else if ((Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A)) && direction != Direction.right)
+		{
 			direction = Direction.left;
+		}
 		else if ((Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D)) && direction != Direction.left)
+		{
 			direction = Direction.right;
+		}
     }
 
 	void OnTriggerEnter2D(Collider2D col)
@@ -80,14 +96,18 @@ public class player : MonoBehaviour
 		}
 		else if (col.CompareTag("Food"))
 		{
-			tail.Add(Instantiate(TailPrefab, tail[tail.Count - 1].position, Quaternion.identity).transform);
+			tail.Add(Instantiate(tailPrefab, tail[tail.Count - 1].position, Quaternion.identity).transform);
 			int x = Mathf.RoundToInt(Random.Range(horizontalRange.x, horizontalRange.y));
 			int y = Mathf.RoundToInt(Random.Range(verticalRange.x, verticalRange.y));
 			col.transform.position = new Vector2(x, y);
 			if (frameRate > 0.1f)
+			{
 				frameRate -= 0.01f;
+			}
 			else if (frameRate > 0.02f)
+			{
 				frameRate -= 0.001f;
+			}
 		}
 	}
 }
